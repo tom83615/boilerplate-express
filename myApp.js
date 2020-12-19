@@ -2,8 +2,9 @@ var express = require('express');
 var app = express();
 
 app.get("/", function(req, res) {
-  console.log("Hello World");
-  res.send('Hello Express');
+  const resPath = __dirname + "/views/index.html";
+  console.log(resPath);
+  res.sendfile(resPath);
 });
 
 
