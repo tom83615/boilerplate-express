@@ -9,6 +9,10 @@ app.get("/", function(req, res) {
   res.sendfile(resPath);
 });
 
+app.get("/json", function(req, res) {
+  res.send({"message": "Hello json"});
+});
+
 
 
 
