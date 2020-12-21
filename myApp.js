@@ -2,6 +2,13 @@ var express = require('express');
 var app = express();
 app.use(express.static(__dirname + "/public"));
 
+app.get("*", function(req, res, next) {
+  const log = req.method + ' ' + req.path + ' - ' + req.ip;
+  console.log(log);
+
+  next();
+});
+
 app.get("/", function(req, res) {
   const resPath = __dirname + "/views/index.html";
 
