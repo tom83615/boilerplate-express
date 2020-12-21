@@ -24,6 +24,13 @@ app.get("/json", function(req, res) {
   res.send(resJSON);
 });
 
+app.get("/now", function(req, res, next) {
+  next();
+}, function(req, res) {
+  let serverTime = new Date().toString();
+  let resJSON = {"time": serverTime};
+  res.send(resJSON);
+});
 
 
 
