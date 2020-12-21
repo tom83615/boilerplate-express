@@ -32,6 +32,11 @@ app.get("/now", function(req, res, next) {
   res.send(resJSON);
 });
 
+app.get("/:word/echo", function(req, res) {
+  const echo = req.params.word;
+  res.send({"echo": echo});
+});
+
 
 
 
