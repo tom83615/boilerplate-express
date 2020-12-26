@@ -47,6 +47,8 @@ app.route("/name")
      const name = req.query;
      res.send({name: name.first + " " + name.last});
   }).post(function(req, res) {
+    const name = req.body;
+    res.send({name: name.first + " " + name.last});
   });
 
 
