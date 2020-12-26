@@ -38,7 +38,12 @@ app.get("/:word/echo", function(req, res) {
 });
 
 
-
+app.route("/name")
+  .get(function(req, res) {
+     const name = req.query;
+     res.send({name: name.first + " " + name.last});
+  }).post(function(req, res) {
+  });
 
 
 
